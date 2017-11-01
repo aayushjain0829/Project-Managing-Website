@@ -27,7 +27,7 @@ if(!isset($_SESSION["sess_user"])){
     <!-- you can replace it by local Font Awesome-->
     <script src="https://use.fontawesome.com/99347ac47f.js"></script>
     <!-- Font Icons CSS-->
-    <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css">
+    <!-- <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css"> -->
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -116,10 +116,11 @@ if(!isset($_SESSION["sess_user"])){
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="avatar"><img src="img/user-icon-image-placeholder.jpg" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h4">Mark Stephen</h1>
-              <p>Web Designer</p>
+              <h1 class="h4">
+                  <?=$_SESSION['sess_fname'];?> <?=$_SESSION['sess_lname'];?>
+                </h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
@@ -133,7 +134,7 @@ if(!isset($_SESSION["sess_user"])){
                 <li><a href="#">Page</a></li>
               </ul>
             </li>
-            <li> <a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
+            <li> <a href="timeTable.php"> <i class="icon-grid"></i>Time-Table </a></li>
             <li> <a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
             <li> <a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
             <li> <a href="login.html"> <i class="icon-interface-windows"></i>Login Page</a></li>
@@ -157,10 +158,10 @@ if(!isset($_SESSION["sess_user"])){
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
                 <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
+                <div class="col-xl-4 col-sm-6">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-violet"><i class="icon-user"></i></div>
-                    <div class="title"><span>New<br>Clients</span>
+                    <div class="title"><span>Classes<br>Attended</span>
                       <div class="progress">
                         <div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-violet"></div>
                       </div>
@@ -169,7 +170,7 @@ if(!isset($_SESSION["sess_user"])){
                   </div>
                 </div>
                 <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
+                <div class="col-xl-4 col-sm-6">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-red"><i class="icon-padnote"></i></div>
                     <div class="title"><span>Work<br>Orders</span>
@@ -181,7 +182,7 @@ if(!isset($_SESSION["sess_user"])){
                   </div>
                 </div>
                 <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
+                <div class="col-xl-4 col-sm-6">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-green"><i class="icon-bill"></i></div>
                     <div class="title"><span>New<br>Invoices</span>
@@ -190,18 +191,6 @@ if(!isset($_SESSION["sess_user"])){
                       </div>
                     </div>
                     <div class="number"><strong>44</strong></div>
-                  </div>
-                </div>
-                <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
-                  <div class="item d-flex align-items-center">
-                    <div class="icon bg-orange"><i class="icon-check"></i></div>
-                    <div class="title"><span>Open<br>Cases</span>
-                      <div class="progress">
-                        <div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-orange"></div>
-                      </div>
-                    </div>
-                    <div class="number"><strong>35</strong></div>
                   </div>
                 </div>
               </div>

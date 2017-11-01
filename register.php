@@ -69,15 +69,14 @@
                       <label for="register-passowrd" class="label-material">password        </label>
                     </div>
                       <?php  
+                            include("config.php");
                             if(isset($_POST["submit"])){  
                                 if(!empty($_POST['registerUsername']) && !empty($_POST['registerPassword']) && !empty($_POST['registerFirstname']) && !empty($_POST['registerLastname']) && !empty($_POST['registerEmail'])) { 
                                     $user=$_POST['registerUsername'];  
                                     $pass=$_POST['registerPassword'];
                                     $email=$_POST['registerEmail'];
                                     $fname=$_POST['registerFirstname'];
-                                    $lname=$_POST['registerLastname'];  
-                                    $con=mysqli_connect('localhost','root','') or die(mysql_error());  
-                                    mysqli_select_db($con,'user-registration') or die("cannot select DB");  
+                                    $lname=$_POST['registerLastname'];    
 
                                     $query_name=mysqli_query($con,"SELECT * FROM users WHERE username='".$user."'");  
                                     $query_email=mysqli_query($con,"SELECT * FROM users WHERE email='".$email."'");  
@@ -86,9 +85,11 @@
                                     if($numrows_name==0 && $numrows_email==0)  {  
                                         $sql="INSERT INTO users(username,password,first_name,last_name,email) VALUES('$user','$pass','$fname','$lname','$email')";  
                                         $result=mysqli_query($con,$sql);  
-                                        if($result){  
-                                            echo "<p style='color:#d9534f; text-align:center; font-size:0.75em;'>Account Successfully Created<br>redirecting to Login page...</p>";
-                                            header("refresh:1;url=login.php");
+                                        if($result){ 
+                                            session_start();  
+                                            $_SESSION['sess_user']=$user; 
+                                            echo "<p style='color:#d9534f; text-align:center; font-size:0.75em;'>Account Successfully Created<br>redirecting to SUBJECT SELECT page...</p>";
+                                            header("refresh:1;url=subjects.php");
                                         } else {  
                                             echo "<p style='color:#d9534f; text-align:center; font-size:0.75em;'>Failure!</p>";  
                                         }  

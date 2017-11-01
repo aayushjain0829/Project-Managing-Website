@@ -21,7 +21,7 @@
     <!-- you can replace it by local Font Awesome-->
     <script src="https://use.fontawesome.com/99347ac47f.js"></script>
     <!-- Font Icons CSS-->
-    <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css">
+    <!-- <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css"> -->
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -56,24 +56,30 @@
                       <label for="login-password" class="label-material">Password</label>
                     </div>
                       <?php  
+                            include("config.php");
                             if(isset($_POST["submit"])) {  
                                 if(!empty($_POST['loginUsername']) && !empty($_POST['loginPassword'])) {  
                                     $user=$_POST['loginUsername'];  
                                     $pass=$_POST['loginPassword'];  
 
-                                    $con=mysqli_connect('localhost','root','') or die(mysqli_error());  
-                                    mysqli_select_db($con,'user-registration') or die("cannot select DB");  
-
-                                    $query=mysqli_query($con,"SELECT * FROM login WHERE username='".$user."' AND password='".$pass."'");  
+                                    $query=mysqli_query($con,"SELECT * FROM users WHERE username='".$user."' AND password='".$pass."'");  
                                     $numrows=mysqli_num_rows($query);  
                                     if($numrows!=0)  {  
                                         while($row=mysqli_fetch_assoc($query))  {  
                                             $dbusername=$row['username'];  
                                             $dbpassword=$row['password'];  
                                         }  
-                                        if($user == $dbusername && $pass == $dbpassword)  {  
+                                        if($user == $dbusername && $pass == $dbpassword)  {
                                             session_start();  
+                                            $fname=mysqli_query($con,"SELECT first_name FROM users WHERE username='".$user."'");
+                                            $lname=mysqli_query($con,"SELECT last_name FROM users WHERE username='".$user."'");
+                                            $sp1=mysqli_query($con,"SELECT sub5 FROM subjects WHERE user_name='".$user."'");
+                                            $sp2=mysqli_query($con,"SELECT sub6 FROM subjects WHERE user_name='".$user."'");
                                             $_SESSION['sess_user']=$user;  
+                                            $_SESSION['sess_fname']=$fname->fetch_object()->first_name; 
+                                            $_SESSION['sess_lname']=$lname->fetch_object()->last_name;
+                                            $_SESSION['sess_sp1']=$sp1->fetch_object()->sub5;
+                                            $_SESSION['sess_sp2']=$sp2->fetch_object()->sub6;  
                                             /* Redirect browser */  
                                             header("Location: index.php");  
                                         }  

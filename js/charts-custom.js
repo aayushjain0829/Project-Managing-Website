@@ -592,7 +592,7 @@ $(document).ready(function () {
     var radarChartExample = new Chart(RADARCHARTEXMPLE, {
         type: 'radar',
         data: {
-            labels: ["A", "B", "C", "D", "E", "C"],
+            labels: ["A", "B", "C", "D", "E", "F"],
             datasets: [
                 {
                     label: "First dataset",
