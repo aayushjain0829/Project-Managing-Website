@@ -9,7 +9,7 @@ if(!isset($_SESSION["sess_user"])){
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <title>TIME-TABLE</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -22,7 +22,7 @@ if(!isset($_SESSION["sess_user"])){
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/BT-logo.png">
     <!-- Font Awesome CDN-->
     <!-- you can replace it by local Font Awesome-->
     <script src="js/fontawesome.js"></script>
@@ -888,10 +888,10 @@ if(!isset($_SESSION["sess_user"])){
                 <div class="col-sm-6">
                   <p>Your company &copy; 2017-2019</p>
                 </div>
-                <div class="col-sm-6 text-right">
+                <!-- <div class="col-sm-6 text-right">
                   <p>Design by <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a></p>
-                  <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-                </div>
+                   Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)
+                </div> -->
               </div>
             </div>
           </footer>

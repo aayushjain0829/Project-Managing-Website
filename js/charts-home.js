@@ -34,10 +34,10 @@ $(document).ready(function () {
             }
         },
         data: {
-            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"],
+            labels: ["1", "2", "3", "4", "5", "6"],
             datasets: [
                 {
-                    label: "Page Visitors",
+                    label: "Monthly",
                     fill: true,
                     lineTension: 0,
                     backgroundColor: "transparent",
@@ -56,11 +56,11 @@ $(document).ready(function () {
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 0,
-                    data: [50, 20, 60, 31, 52, 22, 40, 25, 30, 68, 56, 40, 60, 43, 55, 39, 47],
+                    data: [50, 20, 60, 31, 52, 22],
                     spanGaps: false
                 },
                 {
-                    label: "Page Views",
+                    label: "Weekly",
                     fill: true,
                     lineTension: 0,
                     backgroundColor: "transparent",
@@ -79,7 +79,7 @@ $(document).ready(function () {
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
-                    data: [20, 7, 35, 17, 26, 8, 18, 10, 14, 46, 30, 30, 14, 28, 17, 25, 17, 40],
+                    data: [20, 7, 35, 17, 26, 8],
                     spanGaps: false
                 }
             ]
@@ -204,7 +204,8 @@ $(document).ready(function () {
                     display: false
                 }],
                 yAxes: [{
-                    display: false
+                    display: false,
+                    min: 0,
                 }],
             },
             legend: {
@@ -212,18 +213,11 @@ $(document).ready(function () {
             }
         },
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"],
+            labels: ["July", "August", "September", "October", "November"],
             datasets: [
                 {
                     label: "Data Set 1",
                     backgroundColor: [
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
                         'rgb(121, 106, 238)',
                         'rgb(121, 106, 238)',
                         'rgb(121, 106, 238)',
@@ -235,17 +229,10 @@ $(document).ready(function () {
                         'rgb(121, 106, 238)',
                         'rgb(121, 106, 238)',
                         'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
-                        'rgb(121, 106, 238)',
                         'rgb(121, 106, 238)'
                     ],
                     borderWidth: 1,
-                    data: [35, 49, 55, 68, 81, 95, 85, 40, 30, 27, 22, 15]
+                    data: [81, 81, 81, 81, 81]
                 }
             ]
         }
